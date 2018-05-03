@@ -14,7 +14,7 @@ lazy val dockerSettings = Seq(
   Docker / version := "latest",
   dockerBaseImage := "openjdk:10-jre-slim",
   dockerExposedPorts := Seq(9080),
-  packageName := "akka-kafka-test",
+  packageName := "hellows",
   dockerRepository := Some("jmarin")
 )
 
@@ -41,5 +41,6 @@ lazy val helloWS = (project in file("."))
   .settings(defaultBuildSettings: _*)
   .settings(
     scalafmtSettings,
+    dockerSettings,
     libraryDependencies ++= akkaDeps
   )
